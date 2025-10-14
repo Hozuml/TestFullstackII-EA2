@@ -19,8 +19,7 @@ const ProjectsSection: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
 
-                    {/* Paso 5: Colocamos nuestras moléculas 'ProjectCard' con datos de ejemplo. */}
-                    {/* Solo tienes que cambiar los datos de aquí abajo por los de tus proyectos reales. */}
+
                     <ProjectCard
                         imageUrl="URL_DE_LA_IMAGEN_DE_TU_PROYECTO_1"
                         title="EcoMarket"

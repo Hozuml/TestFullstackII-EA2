@@ -1,10 +1,10 @@
 import React from 'react';
 
 interface ProjectCardProps {
-    imageUrl: string;      // La imagen del proyecto.
-    title: string;         // El título del proyecto.
-    description: string;   // Una breve descripción.
-    projectUrl: string;    // La URL a la que redirigirá al hacer clic.
+    imageUrl: string;
+    title: string;
+    description: string;
+    projectUrl: string;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ imageUrl, title, description, projectUrl }) => {

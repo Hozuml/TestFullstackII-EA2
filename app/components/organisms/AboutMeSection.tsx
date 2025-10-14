@@ -9,7 +9,6 @@ import SectionSubtitle from "~/components/atoms/AboutMe/SectionSubtittle";
 
 const AboutMeSection: React.FC = () => {
     return (
-        // 2. Creamos la sección con su ID para que el enlace del header funcione.
         <section id="sobre-mi" className="py-20 px-4 bg-white">
             <div className="container mx-auto max-w-4xl">
 
