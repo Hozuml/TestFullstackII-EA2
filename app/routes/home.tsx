@@ -11,14 +11,12 @@ export function meta() {
 export default function Home() {
     return (
         <HomeLayout>
-            {/* El 'id' para el enlace de "inicio" */}
             <div id="inicio">
                 <MainBanner />
             </div>
 
             <ProjectsSection />
             <AboutMeSection />
-            {/* Aquí iría la futura sección de Contacto con id="contacto" */}
         </HomeLayout>
     );
 }
