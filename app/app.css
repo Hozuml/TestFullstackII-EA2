@@ -1,7 +1,31 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+/* --- Para el Header --- */
+a.logo {
+    color: #1a202c !important;
+    text-decoration: none !important;
+}
+
+.main-nav a {
+    color: #4A5568 !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #f04299 !important;
+}
+
+.main-action-btn,
+.main-action-btn:hover {
+    text-decoration: none !important;
+}
+
+
+/* --- Para el Main Banner --- */
+
+.career-subtitle {
+    color: #f04299 !important; /* Tu color rosa */
 }
 

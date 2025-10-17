@@ -1,8 +1,7 @@
-import React from 'react';
+import React from "react";
 import Name from "~/components/atoms/MainBanner/Name";
 import Career from "~/components/atoms/MainBanner/Career";
 import Button from "~/components/atoms/UniversalThings/Button";
-
 
 
 const MainBanner: React.FC = () => {
@@ -24,8 +23,8 @@ const MainBanner: React.FC = () => {
 
 
                 <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
-                    <Button href="#portafolio">Ver Portafolio</Button>
-                    <Button href="#contacto">Contacto</Button>
+                    <Button href="#project">Ver Portafolio</Button>
+                    <Button href="#contact">Contacto</Button>
                 </div>
 
             </div>

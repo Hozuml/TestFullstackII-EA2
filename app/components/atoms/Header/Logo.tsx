@@ -1,5 +1,5 @@
+// src/components/atoms/Header/Logo.tsx
 import React from 'react';
-
 
 interface LogoProps {
     text: string;
@@ -7,7 +7,8 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ text }) => {
     return (
-        <a href="/" className="text-2xl font-bold text-gray-900">
+        // Añadimos la clase 'logo' al enlace
+        <a href="/" className="logo text-2xl font-bold">
             {text}
         </a>
     );

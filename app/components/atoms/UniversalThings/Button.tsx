@@ -10,12 +10,12 @@ const Button: React.FC<ButtonProps> = ({ children, href }) => {
         <a
             href={href}
             className="
+        main-action-btn
         flex items-center justify-center
         px-5 h-11 min-w-[120px]
         rounded-full
         font-bold text-base
-        bg-[#f04299]
-        text-white
+        bg-[#f04299] text-white
         transition-transform duration-300
         hover:scale-105
       "
