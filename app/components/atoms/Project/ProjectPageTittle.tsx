@@ -1,4 +1,7 @@
 import React from 'react';
+import { Typography } from 'antd';
+
+const { Title } = Typography;
 
 interface ProjectPageTitleProps {
     children: React.ReactNode;
@@ -6,10 +9,9 @@ interface ProjectPageTitleProps {
 
 const ProjectPageTitle: React.FC<ProjectPageTitleProps> = ({ children }) => {
     return (
-        // 'h1' es la etiqueta correcta para el título principal de la página.
-        <h1 className="text-5xl font-extrabold text-gray-900 text-center">
+        <Title level={1} style={{ textAlign: 'center', fontWeight: 'bold' }}>
             {children}
-        </h1>
+        </Title>
     );
 };
 

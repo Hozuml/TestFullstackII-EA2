@@ -3,7 +3,7 @@ import React from 'react';
 interface SkillCardProps {
     icon: React.ReactNode;
     title: string;
-    level?: string; // El '?' indica que esta prop es opcional.
+    level?: string;
 }
 
 const SkillCard: React.FC<SkillCardProps> = ({ icon, title, level }) => {

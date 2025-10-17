@@ -1,34 +1,59 @@
-import React from "react";
-import Name from "~/components/atoms/MainBanner/Name";
-import Career from "~/components/atoms/MainBanner/Career";
-import Button from "~/components/atoms/UniversalThings/Button";
+import React from 'react';
+import { Button, Space, Flex, Typography, Avatar } from 'antd';
 
+const { Title, Text } = Typography;
 
 const MainBanner: React.FC = () => {
     return (
+        <Flex
+            justify="center"
+            align="center"
+            style={{ minHeight: '100vh', paddingTop: '5rem', padding: '1rem' }}
+        >
+            <Flex
+                vertical
+                align="center"
+                style={{ maxWidth: '32rem', textAlign: 'center' }}
+            >
 
-        <div className="flex min-h-screen items-center justify-center p-4 pt-20">
+                <Avatar
+                    size={160}
+                    src="URL_DE_TU_FOTO_AQUI" // <-- ¡I M P O R T A N T E!
+                />
 
+                <Space direction="vertical" size="middle" style={{ marginTop: '2rem' }}>
 
-            <div className="flex w-full max-w-lg flex-col items-center text-center">
+                    <Title level={1} style={{ marginBottom: 0 }}>Camila Soto Rojas</Title>
+                    <Text style={{ fontSize: '1.125rem', color: '#f04299' }}>
+                        Estudiante de Ingeniería en Informática
+                    </Text>
 
-                <div className="mb-8">
-                    <Name>Camila Soto Rojas</Name>
-                    <Career>Estudiante de Ingeniería en Informática</Career>
-                </div>
+                    <Text type="secondary" style={{ marginTop: '1rem', maxWidth: '28rem' }}>
+                        Estudiante de Ingeniería en Informática en Duoc UC, San Joaquín, especializándome en el desarrollo de software y la gestión de bases de datos. Me apasiona transformar ideas en soluciones tecnológicas robustas y eficientes.
+                    </Text>
 
+                    <Space direction="horizontal" size="large" wrap style={{ marginTop: '1rem' }}>
+                        <Button
+                            type="primary"
+                            size="large"
+                            href="#portafolio"
+                            style={{ borderRadius: '9999px', fontWeight: 'bold', padding: '0 2rem', background: '#f04299' }}
+                        >
+                            Ver Portafolio
+                        </Button>
+                        <Button
+                            size="large"
+                            href="#contacto"
+                            style={{ borderRadius: '9999px', fontWeight: 'bold', padding: '0 2rem' }}
+                        >
+                            Contacto
+                        </Button>
+                    </Space>
 
-                <p className="max-w-md text-gray-600 mb-8">
-                    Estudiante de Ingeniería en Informática en DuocUC, San Joaquín, especializandose en el desarrollo de software y la gestión de bases de datos.               </p>
+                </Space>
 
-
-                <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
-                    <Button href="#project">Ver Portafolio</Button>
-                    <Button href="#contact">Contacto</Button>
-                </div>
-
-            </div>
-        </div>
+            </Flex>
+        </Flex>
     );
 };
 

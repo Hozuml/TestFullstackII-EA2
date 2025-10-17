@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel } from 'react-bootstrap';
+import { Carousel } from 'antd';
 import SectionTitle from "~/components/atoms/UniversalThings/SectionTittle";
 
 const ProjectsSection: React.FC = () => {
@@ -10,49 +10,57 @@ const ProjectsSection: React.FC = () => {
                     <SectionTitle>Mis Proyectos</SectionTitle>
                 </div>
 
-                <Carousel interval={null} variant="dark" fade>
+                <Carousel effect="fade" autoplay={true}>
 
-                    <Carousel.Item>
+                    {/* --- PRIMER PROYECTO --- */}
+                    <div>
                         <a href="/proyectos/e-commerce">
+
+                            <div className="text-gray-800 mt-4">
+                                <h3 className="font-bold text-xl">E-commerce Platform</h3>
+                                <p>Tienda online para todo tipo de productos naturales, orgánicos y sustentables.</p>
+                            </div>
                             <img
-                                className="d-block w-100 rounded-lg"
-                                src="/assets/images/carousel/web_ecomarket.png"
+                                className="w-full rounded-lg"
+                                src="assets/images/carousel/web_ecomarket.png"
                                 alt="Primer proyecto"
                             />
-                            <Carousel.Caption className="text-gray-800 position-static">
-                                <h3 className="font-bold mt-3">E-commerce Platform</h3>
-                                <p>Una plataforma de e-commerce full-stack con autenticación de usuarios e integración de pagos.</p>
-                            </Carousel.Caption>
-                        </a>
-                    </Carousel.Item>
 
-                    <Carousel.Item>
-                        <a href="/proyectos/fitness-tracker">
+                        </a>
+                    </div>
+
+                    {/* --- SEGUNDO PROYECTO --- */}
+                    <div>
+                        <a href="/proyectos/database">
+
+                            <div className="text-gray-800 mt-4">
+                                <h3 className="font-bold text-xl">Base de Datos EcoMarket.</h3>
+                                <p>Base de Datos para el e-commerce de EcoMarket.</p>
+                            </div>
                             <img
-                                className="d-block w-100 rounded-lg"
-                                src="/assets/images/carousel/database_ecomarket.png"
+                                className="w-full rounded-lg"
+                                src="assets/images/carousel/database_ecomarket.png"
                                 alt="Segundo proyecto"
                             />
-                            <Carousel.Caption className="text-gray-800 position-static">
-                                <h3 className="font-bold mt-3">Mobile Fitness Tracker</h3>
-                                <p>Una app móvil para registrar actividades físicas con planes de entrenamiento personalizados.</p>
-                            </Carousel.Caption>
-                        </a>
-                    </Carousel.Item>
 
-                    <Carousel.Item>
-                        <a href="/proyectos/data-dashboard">
+                        </a>
+                    </div>
+
+                    {/* --- TERCER PROYECTO --- */}
+                    <div>
+                        <a href="/proyectos/organic-store">
+
+                            <div className="text-gray-800 mt-4">
+                                <h3 className="font-bold text-xl">Huerto Hogar</h3>
+                                <p>Tienda de alimentos organicos y sustentables.</p>
+                            </div>
                             <img
-                                className="d-block w-100 rounded-lg"
-                                src="/assets/images/carousel/huerto_hogar.png"
+                                className="w-full rounded-lg"
+                                src="assets/images/carousel/huerto_hogar.png"
                                 alt="Tercer proyecto"
                             />
-                            <Carousel.Caption className="text-gray-800 position-static">
-                                <h3 className="font-bold mt-3">Data Visualization Dashboard</h3>
-                                <p>Un panel interactivo para visualizar datos de ventas y tendencias del mercado.</p>
-                            </Carousel.Caption>
                         </a>
-                    </Carousel.Item>
+                    </div>
 
                 </Carousel>
             </div>

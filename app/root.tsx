@@ -7,15 +7,15 @@ import {
     ScrollRestoration,
 } from "react-router";
 
-import bootstrapStyles from 'bootstrap/dist/css/bootstrap.min.css?url';
-import appStyles from "./app.css?url";
+import 'antd/dist/reset.css';
 
 import type { Route } from "./+types/root";
+import appStyles from "./app.css?url";
+
 
 
 export const links: Route.LinksFunction = () => [
-    { rel: "stylesheet", href: bootstrapStyles }, // Primero Bootstrap
-    { rel: "stylesheet", href: appStyles },       // Luego tus estilos
+    { rel: "stylesheet", href: appStyles },
     { rel: "preconnect", href: "https://fonts.googleapis.com" },
     {
         rel: "preconnect",
