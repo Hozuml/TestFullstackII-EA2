@@ -59,3 +59,14 @@ a.logo {
     height: 12px !important;
 }
 
+body {
+    background-image: url('/assets/images/background/background.jpg') !important;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+
+    background-color: #f8f6f7 !important;
+}

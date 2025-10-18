@@ -6,7 +6,7 @@ const { TextArea } = Input; // Un atajo para Input.TextArea
 
 const ContactSection: React.FC = () => {
     return (
-        <section id="contacto" className="py-20 px-4 bg-white">
+        <section id="contacto" className="py-20 px-4 ">
             <div className="container mx-auto max-w-2xl text-center">
 
                 <div className="mb-12">

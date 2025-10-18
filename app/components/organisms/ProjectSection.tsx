@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Modal, Button, Typography, Image, Tag, Space, Row, Col, Carousel } from 'antd';
 import ProjectCard from '../molecules/ProjectCard';
 import SectionTitle from "~/components/atoms/UniversalThings/SectionTittle";
+import TechTag from "~/components/atoms/Project/TechTag";
 
 const { Paragraph, Text, Title } = Typography;
 
@@ -72,7 +73,7 @@ const ProjectsSection: React.FC = () => {
     };
 
     return (
-        <section id="portafolio" className="py-20 px-4 bg-white">
+        <section id="portafolio" className="py-20 px-4 ">
             <div className="container mx-auto max-w-4xl text-center">
                 <div className="mb-12">
                     <SectionTitle>Mis Proyectos</SectionTitle>
@@ -90,28 +91,44 @@ const ProjectsSection: React.FC = () => {
                 </Row>
             </div>
 
+            {/* Modal */}
             <Modal
+                title={
+                    <Title level={3} style={{ color: '#f04299', textAlign: 'center', marginBottom: '1.5rem' }}>
+                        {selectedProject?.title}
+                    </Title>
+                }
                 open={isModalOpen}
                 onCancel={handleCancel}
-                footer={[
+                footer={[ <div key="footer-wrapper" style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                     <Button
                         key="back"
                         onClick={handleCancel}
-                        style={{ backgroundColor: '#f04299', borderColor: '#f04299', color: 'white' }}
+                        size="large"
+                        style={{
+                            backgroundColor: '#f04299',
+                            borderColor: '#f04299',
+                            color: 'white',
+                            paddingLeft: '2rem',
+                            paddingRight: '2rem',
+                            height: 'auto'
+                        }}
                     >
                         Cerrar
                     </Button>
+                </div>
                 ]}
                 width={800}
             >
                 {selectedProject && (
                     <>
+
                         {selectedProject.gallery && selectedProject.gallery.length > 0 && (
                             <Carousel
                                 effect="fade"
                                 autoplay
                                 dots={true}
-                                style={{ marginBottom: '1.5rem' }}
+                                style={{ marginTop: '1.5rem', marginBottom: '1.5rem' }}
                             >
                                 {selectedProject.gallery.map((imgUrl, index) => (
                                     <div key={index}>
@@ -127,16 +144,18 @@ const ProjectsSection: React.FC = () => {
                             </Carousel>
                         )}
 
-                        <Title level={4}>Descripción</Title>
-                        <Paragraph>{selectedProject.longDescription || selectedProject.description}</Paragraph>
+                        {/* Título "Descripción" en Rosa */}
+                        <Title level={4} style={{ color: '#f04299' }}>Descripción</Title>
+                        <Paragraph>{selectedProject.longDescription}</Paragraph>
 
                         {selectedProject.technologies && (
                             <div style={{ marginTop: '1rem' }}>
-                                <Text strong>Tecnologías:</Text>
+                                {/* Título "Tecnologías Utilizadas" en Rosa */}
+                                <Title level={4} style={{ color: '#f04299' }}>Tecnologías Utilizadas</Title>
                                 <div style={{ marginTop: '0.5rem' }}>
                                     <Space size={[0, 8]} wrap>
                                         {selectedProject.technologies.map(tech => (
-                                            <Tag key={tech}>{tech}</Tag>
+                                            <TechTag key={tech}>{tech}</TechTag>
                                         ))}
                                     </Space>
                                 </div>

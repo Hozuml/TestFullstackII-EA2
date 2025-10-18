@@ -9,7 +9,7 @@ import SectionSubtitle from "~/components/atoms/AboutMe/SectionSubtittle";
 
 const AboutMeSection: React.FC = () => {
     return (
-        <section id="sobre-mi" className="py-20 px-4 bg-white">
+        <section id="sobre-mi" className="py-20 px-4 ">
             <div className="container mx-auto max-w-4xl">
 
                 {/* --- Título Principal --- */}
