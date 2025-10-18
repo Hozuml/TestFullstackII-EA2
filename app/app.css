@@ -26,6 +26,36 @@ a.logo {
 /* --- Para el Main Banner --- */
 
 .career-subtitle {
-    color: #f04299 !important; /* Tu color rosa */
+    color: #f04299 !important;
+}
+
+/* Contenedor principal de los puntos */
+.ant-carousel .slick-dots {
+    bottom: -15px !important;
+}
+
+/* El elemento <li> que contiene cada botón (punto) */
+.ant-carousel .slick-dots li {
+    margin: 0 4px !important;
+    width: 12px !important;
+    height: 12px !important;
+}
+
+/* El botón (el punto) INACTIVO */
+.ant-carousel .slick-dots li button {
+    background: #f04299 !important;
+    opacity: 0.5 !important;
+    border-radius: 50% !important;
+    width: 10px !important;
+    height: 10px !important;
+    transition: all 0.3s ease !important;
+}
+
+/* El botón (el punto) ACTIVO */
+.ant-carousel .slick-dots li.slick-active button {
+    opacity: 1 !important;
+    background: #f04299 !important;
+    width: 12px !important;
+    height: 12px !important;
 }
 

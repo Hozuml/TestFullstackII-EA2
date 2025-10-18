@@ -1,24 +1,17 @@
 import React from 'react';
 
 
-interface NavBarLinkProps{
-    href: string
-    children: React.ReactNode
+interface NavBarLinkProps {
+    href: string;
+    children: React.ReactNode;
 }
 
-const NavBarLink: React.FC<NavBarLinkProps> = ({href, children}: NavBarLinkProps) => {
+const NavBarLinks: React.FC<NavBarLinkProps> = ({ href, children }) => {
     return (
-        <a
-            href={href}
-            className="
-            text-gray-600
-            hover:text-[#f04299]
-            transition-colors
-            duration-200"
-        >
+        <a href={href} className="nav-link">
             {children}
         </a>
     );
 };
 
-export default NavBarLink;
+export default NavBarLinks;

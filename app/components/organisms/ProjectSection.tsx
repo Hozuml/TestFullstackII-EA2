@@ -1,8 +1,76 @@
-import React from 'react';
-import { Carousel } from 'antd';
+import React, { useState } from 'react';
+import { Modal, Button, Typography, Image, Tag, Space, Row, Col, Carousel } from 'antd';
+import ProjectCard from '../molecules/ProjectCard';
 import SectionTitle from "~/components/atoms/UniversalThings/SectionTittle";
 
+const { Paragraph, Text, Title } = Typography;
+
+interface ProjectData {
+    id: number;
+    title: string;
+    description: string;
+    longDescription?: string;
+    gallery: string[];
+    technologies?: string[];
+}
+
+const projects: ProjectData[] = [
+    {
+        id: 1,
+        title: "EcoMarket",
+        description: "E-commerce \"EcoMarket\": portal de clientes con autenticación y panel admin para gestión de productos y tiendas.",
+        longDescription: "Plataforma e-commerce \"EcoMarket\", implementando una interfaz web para clientes con navegación por Productos, Tiendas y Pedidos, además de autenticación de usuarios. El backend, desarrollado en Java, expone una API RESTful que gestiona la lógica de negocio y se comunica con una base de datos H2. Incluye un robusto sistema de gestión interna con funcionalidades administrativas para realizar operaciones CRUD completas sobre Productos (agregar, buscar, visualizar con precio y gestión de stock) y Tiendas (agregar, visualizar detalles de ubicación). Diseñada para la administración eficiente del catálogo, inventario, ubicaciones y cuentas de usuario.",
+        gallery: [
+            "assets/images/carousel/web_ecomarket.png",
+            "assets/images/ecomarket_project/home_ecomarket.png",
+            "assets/images/ecomarket_project/login_ecomarket.png",
+            "assets/images/ecomarket_project/product_ecomarket.png"
+        ],
+        technologies: ["Java", "API RESTful", "H2 Database", "Spring Boot", "HTML", "CSS","Maven", "Git"]
+    },
+    {
+        id: 2,
+        title: "Base de Datos EcoMarket",
+        description: "E-commerce \"EcoMarket\" con gestión avanzada de inventario multi-tienda mediante Oracle Database y PL/SQL",
+        longDescription: "La plataforma cuenta con una interfaz web funcional para clientes (con navegación por Productos, Tiendas, Pedidos y autenticación de usuarios) y un panel administrativo para operaciones CRUD (productos, tiendas, usuarios), cuyo funcionamiento se basa en la lógica de negocio implementada en el backend. Destaca un proceso automatizado en PL/SQL para la gestión avanzada del inventario: utiliza cursores para recorrer datos de tiendas, inventario y productos, y records para estructurar la información. Este proceso genera reportes de stock por tienda, clasifica el estado de cada producto ('SIN STOCK', 'BAJO', 'OK') basado en umbrales configurables por tienda, y calcula sugerencias de reposición para minimizar quiebres de stock. El sistema incluye manejo de excepciones (como VALUE_ERROR, DUP_VAL_ON_INDEX, OTHERS) para robustez.",
+        gallery: [
+            "assets/images/carousel/database_ecomarket.png",
+            "assets/images/ecomarket_database/data_table.png",
+            "assets/images/ecomarket_database/loop.png",
+            "assets/images/ecomarket_database/math_operations.png"
+        ],
+        technologies: ["Oracle Database","Oracle SQL Developer Data Modeler","PL/SQL","Oracle SQL Developer"]
+    },
+    {
+        id: 3,
+        title: "Tienda Huerto Hogar",
+        description: "Tienda online \"Huerto Hogar\" con catálogo de productos y panel de control administrativo.",
+        longDescription: "Plataforma e-commerce para \"Huerto Hogar\", tienda online chilena de productos orgánicos. Implementa una interfaz web para clientes que permite explorar el catálogo y gestionar un carrito de compras. Incluye un sistema de gestión interna (backend) con panel de administración que permite realizar operaciones CRUD sobre productos (incluyendo gestión de stock y categorías) y usuarios (con administración de roles y datos). La aplicación fue desarrollada para optimizar tanto la experiencia de compra como la administración logística de la tienda.",
+        gallery: [
+            "assets/images/carousel/huerto_hogar.png",
+            "assets/images/huertohogar-project/home-huertohogar.png",
+            "assets/images/huertohogar-project/adminproduct-huertohogar.png",
+            "assets/images/huertohogar-project/contact-huertohogar.png",
+            "assets/images/huertohogar-project/adminusers-huertohogar.png"
+        ],
+        technologies: ["JavaScript","H2 Database","HTML","CSS"]
+    },
+];
+
 const ProjectsSection: React.FC = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
+
+    const showModal = (project: ProjectData) => {
+        setSelectedProject(project);
+        setIsModalOpen(true);
+    };
+
+    const handleCancel = () => {
+        setIsModalOpen(false);
+        setSelectedProject(null);
+    };
+
     return (
         <section id="portafolio" className="py-20 px-4 bg-white">
             <div className="container mx-auto max-w-4xl text-center">
@@ -10,60 +78,73 @@ const ProjectsSection: React.FC = () => {
                     <SectionTitle>Mis Proyectos</SectionTitle>
                 </div>
 
-                <Carousel effect="fade" autoplay={true}>
-
-                    {/* --- PRIMER PROYECTO --- */}
-                    <div>
-                        <a href="/proyectos/e-commerce">
-
-                            <div className="text-gray-800 mt-4">
-                                <h3 className="font-bold text-xl">E-commerce Platform</h3>
-                                <p>Tienda online para todo tipo de productos naturales, orgánicos y sustentables.</p>
-                            </div>
-                            <img
-                                className="w-full rounded-lg"
-                                src="assets/images/carousel/web_ecomarket.png"
-                                alt="Primer proyecto"
+                <Row gutter={[24, 24]} justify="center">
+                    {projects.map((project) => (
+                        <Col key={project.id} xs={24} sm={12} md={8}>
+                            <ProjectCard
+                                title={project.title}
+                                onClick={() => showModal(project)}
                             />
-
-                        </a>
-                    </div>
-
-                    {/* --- SEGUNDO PROYECTO --- */}
-                    <div>
-                        <a href="/proyectos/database">
-
-                            <div className="text-gray-800 mt-4">
-                                <h3 className="font-bold text-xl">Base de Datos EcoMarket.</h3>
-                                <p>Base de Datos para el e-commerce de EcoMarket.</p>
-                            </div>
-                            <img
-                                className="w-full rounded-lg"
-                                src="assets/images/carousel/database_ecomarket.png"
-                                alt="Segundo proyecto"
-                            />
-
-                        </a>
-                    </div>
-
-                    {/* --- TERCER PROYECTO --- */}
-                    <div>
-                        <a href="/proyectos/organic-store">
-
-                            <div className="text-gray-800 mt-4">
-                                <h3 className="font-bold text-xl">Huerto Hogar</h3>
-                                <p>Tienda de alimentos organicos y sustentables.</p>
-                            </div>
-                            <img
-                                className="w-full rounded-lg"
-                                src="assets/images/carousel/huerto_hogar.png"
-                                alt="Tercer proyecto"
-                            />
-                        </a>
-                    </div>
-
-                </Carousel>
+                        </Col>
+                    ))}
+                </Row>
             </div>
+
+            <Modal
+                open={isModalOpen}
+                onCancel={handleCancel}
+                footer={[
+                    <Button
+                        key="back"
+                        onClick={handleCancel}
+                        style={{ backgroundColor: '#f04299', borderColor: '#f04299', color: 'white' }}
+                    >
+                        Cerrar
+                    </Button>
+                ]}
+                width={800}
+            >
+                {selectedProject && (
+                    <>
+                        {selectedProject.gallery && selectedProject.gallery.length > 0 && (
+                            <Carousel
+                                effect="fade"
+                                autoplay
+                                dots={true}
+                                style={{ marginBottom: '1.5rem' }}
+                            >
+                                {selectedProject.gallery.map((imgUrl, index) => (
+                                    <div key={index}>
+                                        <Image
+                                            width="100%"
+                                            src={imgUrl}
+                                            alt={`${selectedProject.title} - Imagen ${index + 1}`}
+                                            style={{ borderRadius: '8px', objectFit: 'contain', maxHeight: '400px' }}
+                                            preview={false}
+                                        />
+                                    </div>
+                                ))}
+                            </Carousel>
+                        )}
+
+                        <Title level={4}>Descripción</Title>
+                        <Paragraph>{selectedProject.longDescription || selectedProject.description}</Paragraph>
+
+                        {selectedProject.technologies && (
+                            <div style={{ marginTop: '1rem' }}>
+                                <Text strong>Tecnologías:</Text>
+                                <div style={{ marginTop: '0.5rem' }}>
+                                    <Space size={[0, 8]} wrap>
+                                        {selectedProject.technologies.map(tech => (
+                                            <Tag key={tech}>{tech}</Tag>
+                                        ))}
+                                    </Space>
+                                </div>
+                            </div>
+                        )}
+                    </>
+                )}
+            </Modal>
         </section>
     );
 };

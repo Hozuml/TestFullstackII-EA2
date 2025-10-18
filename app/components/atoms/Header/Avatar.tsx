@@ -16,7 +16,7 @@ const Avatar: React.FC<AvatarProps> = ({ imageUrl }) => {
         bg-center
         shadow-md
       "
-            style={{ backgroundImage: `url('${imageUrl}')` }} //imagen mia
+            style={{ backgroundImage: `url('assets/images/avatar/yo2.jpg')` }}
         ></div>
     );
 };

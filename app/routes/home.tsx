@@ -1,13 +1,12 @@
-import React from 'react';
 import MainBanner from '~/components/molecules/MainBanner';
 import AboutMeSection from '~/components/organisms/AboutMeSection';
+import ContactSection from '~/components/organisms/ContactSection';
+import Footer from '~/components/organisms/Footer';
 import HomeLayout from "~/components/layout/HomeLayout";
 import ProjectsSection from "~/components/organisms/ProjectSection";
-import ContactSection from "~/components/organisms/ContactSection";
-import Footer from "~/components/organisms/Footer";
 
 export function meta() {
-    return [{ title: "Camila Soto - Portafolio Profesional" }];
+    return [{ title: "Portafolio - Camila Soto Rojas" }];
 }
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
             <div id="inicio">
                 <MainBanner />
             </div>
-
             <ProjectsSection />
             <AboutMeSection />
             <ContactSection />

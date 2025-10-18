@@ -18,7 +18,7 @@ const MainBanner: React.FC = () => {
 
                 <Avatar
                     size={160}
-                    src="URL_DE_TU_FOTO_AQUI" // <-- ¡I M P O R T A N T E!
+                    src="assets/images/avatar/yo2.jpg"
                 />
 
                 <Space direction="vertical" size="middle" style={{ marginTop: '2rem' }}>
