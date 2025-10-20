@@ -5,7 +5,7 @@ import { IoGameControllerOutline, IoBulbOutline, IoStarOutline } from 'react-ico
 
 import SkillCard from '../molecules/SkillCard';
 import SectionTitle from "~/components/atoms/UniversalThings/SectionTittle";
-import SectionSubtitle from "~/components/atoms/AboutMe/SectionSubtittle";
+import SectionSubtitle from "~/components/atoms/AboutMe/SectionSubtitle";
 
 const AboutMeSection: React.FC = () => {
     return (
