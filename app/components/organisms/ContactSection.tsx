@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Button, Input } from 'antd';
 import SectionTitle from "~/components/atoms/UniversalThings/SectionTittle";
 
-const { TextArea } = Input; // Un atajo para Input.TextArea
+const { TextArea } = Input;
 
 const ContactSection: React.FC = () => {
     return (
