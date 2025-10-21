@@ -14,10 +14,10 @@ const Footer: React.FC = () => {
 
                     <div className="mb-4 md:mb-0">
                         <div className="flex justify-center md:justify-start text-xl">
-                            <Logo text="Camila Soto Rojas" />
+                            <Logo text=" ₊˚.⋆☾⋆⁺₊ Camila Soto Rojas ₊˚.⋆☾⋆⁺₊" />
                         </div>
                         <p className="text-xs text-gray-500 mt-2">
-                            © {currentYear} Camila Soto Rojas. Todos los derechos reservados.
+                            © {currentYear} Todos los derechos reservados. ❀
                         </p>
                     </div>
 

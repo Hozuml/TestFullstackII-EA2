@@ -29,8 +29,9 @@ const MainBanner: React.FC = () => {
                     </Text>
 
                     <Text type="secondary" style={{ marginTop: '1rem', maxWidth: '28rem' }}>
-                        Estudiante de Ingeniería en Informática en Duoc UC, San Joaquín, especializándome en el desarrollo de software y la gestión de bases de datos. Me apasiona transformar ideas en soluciones tecnológicas robustas y eficientes.
-                    </Text>
+                        Cursando Ingeniería en Informática en Duoc UC, sede San Joaquín. Me interesa el desarrollo de software y la administración de bases de datos, áreas en las que disfruto explorar nuevas herramientas y metodologías.
+
+                        A lo largo de mi formación he adquirido conocimientos en programación, análisis de sistemas y diseño de soluciones que respondan a necesidades reales. Me motiva seguir aprendiendo, mejorar mis habilidades técnicas y participar en proyectos donde pueda aportar tanto en la parte lógica como en la creatividad del desarrollo.                    </Text>
 
                     <Space direction="horizontal" size="large" wrap style={{ marginTop: '1rem' }}>
                         <Button
